@@ -3,7 +3,7 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   deploy:
@@ -19,16 +19,16 @@ jobs:
 
       - name: Deploy to cPanel
         env:
-          CPANEL_USER: ${{ secrets.CPANEL_USER }}
-          CPANEL_HOST: ${{ secrets.CPANEL_HOST }}
-          CPANEL_PORT: ${{ secrets.CPANEL_PORT }}
+          CPANEL_USER: dipendr5  # Replace with your cPanel username
+          CPANEL_HOST: python.dipendratamang.com.np  # Replace with your cPanel host/domain/IP
+          CPANEL_PORT: 22  # Replace with your cPanel SSH port
         run: |
           ssh $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
-          cd /home/username/django_project
-          source /home/username/python_app/venv/bin/activate
+          cd /home/dipendr5/django_project  # Adjust path as per your project structure
+          source /home/dipendr5/python_app/venv/bin/activate
           git pull origin main
           pip install -r requirements.txt
           python manage.py migrate
           python manage.py collectstatic --noinput
-          touch /home/username/django_project/tmp/restart.txt
+          touch /home/dipendr5/django_project/tmp/restart.txt
           EOF
