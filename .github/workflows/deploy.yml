@@ -25,8 +25,8 @@ jobs:
         run: |
           ssh-keyscan -H $CPANEL_HOST >> ~/.ssh/known_hosts
           ssh $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
-          source /home/dipendr5/virtualenv/python/3.8/bin/activate
-          cd /home/dipendr5/python/djangopersonalsite
+          source /home/dipendr5/virtualenv/djangopersonalsite/3.8/bin/activate 
+          cd /home/dipendr5/djangopersonalsite
           git pull origin master
           pip install -r requirements.txt
           python manage.py migrate
