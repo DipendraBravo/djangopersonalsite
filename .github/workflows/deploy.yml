@@ -3,32 +3,31 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - main
+      - master  # Adjust to your default branch name
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'  # Replace with your Python version
 
       - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Set up SSH key
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
       - name: Deploy to cPanel
-        env:
-          CPANEL_USER: dipendr5  # Replace with your cPanel username
-          CPANEL_HOST: python.dipendratamang.com.np  # Replace with your cPanel host/domain/IP
-          CPANEL_PORT: 2222  # Replace with your cPanel SSH port
         run: |
-          ssh $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
-          cd /home/dipendr5/django_project  # Adjust path as per your project structure
-          source /home/dipendr5/python_app/venv/bin/activate
-          git pull origin main
-          pip install -r requirements.txt
-          python manage.py migrate
-          python manage.py collectstatic --noinput
-          touch /home/dipendr5/django_project/tmp/restart.txt
-          EOF
+          ssh dipendr5@python.dipendratamang.com.np 'source /home/dipendr5/virtualenv/python.dipendratamang.com.np/djangopersonalsite/3.8/bin/activate && cd /home/dipendr5/python.dipendratamang.com.np/djangopersonalsite && git pull origin master && pip install -r requirements.txt && python manage.py migrate'
