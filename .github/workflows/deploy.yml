@@ -3,21 +3,31 @@ name: Deploy to cPanel
 on:
   push:
     branches:
-      - master  # Adjust to your default branch name
+      - main
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up SSH key
-        uses: webfactory/ssh-agent@v0.5.3
-        with:
-          ssh-private-key: ${{ secrets.DIPENDRA }}
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
 
       - name: Deploy to cPanel
+        env:
+          CPANEL_USER: dipendr5  # Replace with your cPanel username
+          CPANEL_HOST: dipendratamang.com.np  # Replace with your cPanel host/domain/IP
+          CPANEL_PORT: 22  # Replace with your cPanel SSH port
         run: |
-          ssh dipendr5@dipendratamang.com.np 'source /home/dipendr5/virtualenv/python/3.8/bin/activate && cd /home/dipendr5/python/djangopersonalsite && git pull origin master && pip install -r requirements.txt && python manage.py migrate'
+          ssh-keyscan -H $CPANEL_HOST >> ~/.ssh/known_hosts
+          ssh $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
+          source /home/dipendr5/virtualenv/python/3.8/bin/activate
+          cd /home/dipendr5/python/djangopersonalsite
+          git pull origin main
+          pip install -r requirements.txt
+          python manage.py migrate
+          EOF
