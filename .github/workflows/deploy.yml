@@ -21,7 +21,7 @@ jobs:
         env:
           CPANEL_USER: dipendr5  # Replace with your cPanel username
           CPANEL_HOST: python.dipendratamang.com.np  # Replace with your cPanel host/domain/IP
-          CPANEL_PORT: 22  # Replace with your cPanel SSH port
+          CPANEL_PORT: 2222  # Replace with your cPanel SSH port
         run: |
           ssh $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
           cd /home/dipendr5/django_project  # Adjust path as per your project structure
