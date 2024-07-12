@@ -27,7 +27,7 @@ jobs:
           ssh $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
           source /home/dipendr5/virtualenv/python/3.8/bin/activate
           cd /home/dipendr5/python/djangopersonalsite
-          git pull origin main
+          git pull origin master
           pip install -r requirements.txt
           python manage.py migrate
           EOF
