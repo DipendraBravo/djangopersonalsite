@@ -17,6 +17,13 @@ jobs:
         run: |
           pip install -r requirements.txt
           
+      - name: Prepare SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.DIPENDRA }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCwHaUuVXViXxBE4yCh+7DYv7QF4vmgvkEyOY8Z6lfrHEu68Tm6fmvhA4xOqNuNK1uwj3+I3AhBLj2TKPL9pCT/qCeKIwCsKfYHzaClagAE3BJ8EzpqKJCWpFJP9XZZsIRqk5ObJxcViW1RwYsk/OWJTMEZ7faQXca+hRCCakoGR/isiEBSTURqGjLyGqqs/EK978iRjAKNek1E8W+gbdbw1PFNkdMVFPw22SRmXpiOChLOvbbYgDbPS4VDnhPSZYLEHviotwEeFGTSOmfKql8xkK+ByEIINzW+69sQuMlXaYDUHPnA/5AGyYgI3Nq05CrmK6vZ0yY8fQaOkytcGlhWh8qFVxU6wyxbAERdG6YYnaK7Y2SGywu0IEpfrSq3ABl0JgJNdvMaPKj9D+2RPl9bue6M5PPw9vv8SsjulCJBkCdK9NTPCjKFTKg7Ev4mYXt5DXzQ+uw0D8yAspxgIBF0CV1oLxXSfvpCInqFD/tkbHR4GLZ1bn4QgDBjHva+RcMTR/BUfQIrHbLU4N/f29a3uWUEkWrFd8Yqvbw34S/coU/i9a2DmCZWTe/8+qsl+vC1bM2LOaXwlvJM9lAgmsbBK4WrHAQfB6B3Ny50kj826ol73cFXv3X7WfiumEOdlE3SKzxLFLJNEKkHx1TVq3idreYLOvKI/8lQdcfl3X0kxQ== dipendra.tamang9@gmail.com" >> ~/.ssh/known_hosts
+
       - name: Deploy to cPanel
         env:
           CPANEL_USER: dipendr5
