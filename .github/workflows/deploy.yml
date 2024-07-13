@@ -31,7 +31,7 @@ jobs:
           CPANEL_PORT: 22
         run: |
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
-          source /home/dipendr5/virtualenv/djangopersonalsite/3.8/bin/activate
+          source /home/dipendr5/virtualenv/djangopersonalsite/3.8/bin/activate 
           cd /home/dipendr5/djangopersonalsite
           git pull origin master
           pip install -r requirements.txt
