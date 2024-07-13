@@ -16,6 +16,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
+      - name: Prepare SSH
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H $CPANEL_HOST >> ~/.ssh/known_hosts
 
       - name: Deploy to cPanel
         env:
@@ -23,11 +27,11 @@ jobs:
           CPANEL_HOST: dipendratamang.com.np  # Replace with your cPanel host/domain/IP
           CPANEL_PORT: 22  # Replace with your cPanel SSH port
         run: |
-          ssh-keyscan -H $CPANEL_HOST >> ~/.ssh/known_hosts
-          ssh $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
-          source /home/dipendr5/virtualenv/djangopersonalsite/3.8/bin/activate 
-          cd /home/dipendr5/djangopersonalsite
-          git pull origin master
-          pip install -r requirements.txt
-          python manage.py migrate
-          EOF
+           ssh $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
+           source /home/dipendr5/virtualenv/djangopersonalsite/3.8/bin/activate
+           cd /home/dipendr5/djangopersonalsite
+           git pull origin master
+           pip install -r requirements.txt
+           python manage.py migrate
+           python manage.py collectstatic --noinput
+           EOF
