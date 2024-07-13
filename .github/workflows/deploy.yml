@@ -22,13 +22,14 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.DIPENDRA }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H $CPANEL_HOST >> ~/.ssh/known_hosts
+          # Skipping ssh-keyscan if known_hosts already exists
+          # ssh-keyscan -H $CPANEL_HOST >> ~/.ssh/known_hosts
 
       - name: Deploy to cPanel
         env:
-          CPANEL_USER: dipendr5  # Replace with your cPanel username
-          CPANEL_HOST: dipendratamang.com.np  # Replace with your cPanel host/domain/IP
-          CPANEL_PORT: 22  # Replace with your cPanel SSH port
+          CPANEL_USER: dipendr5
+          CPANEL_HOST: dipendratamang.com.np
+          CPANEL_PORT: 22
         run: |
           ssh -i ~/.ssh/id_rsa $CPANEL_USER@$CPANEL_HOST -p $CPANEL_PORT << 'EOF'
           source /home/dipendr5/virtualenv/djangopersonalsite/3.8/bin/activate
