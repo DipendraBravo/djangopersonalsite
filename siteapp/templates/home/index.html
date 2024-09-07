@@ -2,44 +2,222 @@
 {% load static %}
 
 {% block content %}
-  <div class="content">
-        <!-- Hero Section -->
-        <section id="hero" class="bg-gray-800 text-white h-screen flex flex-col justify-center items-center text-center">
-            <div class="container mx-auto px-4">
-                <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to My Personal Website</h2>
-                <p class="text-lg md:text-xl mb-6">I'm Dipendra Tamang, a passionate software developer dedicated to creating innovative and efficient solutions. Explore my work and get in touch!</p>
-                <a href="#contact" class="bg-blue-500 text-white px-6 py-3 rounded-lg text-lg hover:bg-blue-600 transition">Contact Me</a>
+ <!-- Main Content -->
+    <main class="container mx-auto px-4 py-10">
+        <section id="training-skills" class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Training and Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Database</h3>
+                    <ul class="list-disc list-inside">
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Programming</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Java</li>
+                        <li>C</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Web Technologies</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Bootstrap</li>
+                        <li>Tailwind CSS</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JSON</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Web Services</h3>
+                    <ul class="list-disc list-inside">
+                        <li>REST</li>
+                        <li>Microservices</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Version Control</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Git</li>
+                        <li>BitBucket</li>
+                        <li>GitHub</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Back-end Frameworks</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Micronaut</li>
+                        <li>Spring Boot</li>
+                        <li>Django</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">Software Architecture</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Clean Architecture</li>
+                        <li>Clean Code</li>
+                        <li>MVC Pattern</li>
+                        <li>SOLID principles</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" class="py-16 bg-white">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
-                <p class="text-lg max-w-2xl mx-auto text-center">Hello! I'm Dipendra Tamang, a passionate software developer with a knack for building dynamic and impactful software solutions. With a deep interest in technology and problem-solving, I strive to create efficient, scalable, and user-friendly applications. Let's connect and explore how I can help bring your ideas to life.</p>
+        <section id="certifications" class="mt-10 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Certifications</h2>
+            <ul class="list-disc list-inside">
+                <li>Java Intermediate - Sololearn</li>
+                <li>Introduction to Java - Sololearn</li>
+            </ul>
+        </section>
+
+        <section id="work-experience" class="mt-10 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Work Experience</h2>
+
+            <!-- Monitoring Engineer -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Monitoring Engineer - Java</h3>
+                <p class="text-gray-600 font-medium">Smart Data Solution Pvt Ltd | Kandevta, Lalitpur, Nepal | 1st April 2024 – Present</p>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>Create a defect fixed on code.</li>
+                    <li>Performs continuous monitoring of the production state of all assigned customers.</li>
+                    <li>Troubleshoots and corrects technical systems to ensure transactions are moving through the system properly.</li>
+                    <li>Recognizes aging transactions and works to resolve issues to keep the transactions moving.</li>
+                    <li>Sees to it that SDS is meeting turn-around-time and that assigned accounts are current with production every day prior to the start of the US workday.</li>
+                    <li>Performs other related duties as assigned.</li>
+                    <li>Communicates to customers (via emails) about SDS workflows.</li>
+                    <li>Communicates to customer of any critical production issues that may affect a customer’s production process.</li>
+                    <li>Communicate to the team lead or manager on any critical production issues related to customers.</li>
+                    <li>Adheres to SDS’s courteous and professional, written and verbal, communication standards.</li>
+                    <li>Execute the query. Create a query.</li>
+                </ul>
+            </div>
+
+            <!-- Software Engineer -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Software Engineer - Java</h3>
+                <p class="text-gray-600 font-medium">Citytech Pvt Ltd | Kamaladi, Kathmandu, Nepal | 26 Aug 2023 – 29 March 2024</p>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>Collaborated on the development of a fin-tech product, contributing to the creation of a dynamic QR code generation system. </li>
+                    <li>The server-side development involved Java programming language to manage communication with micro-services, facilitating seamless request and response processes.</li>
+                    <li>Implemented MQTT protocol for efficient device-to-back-end server communication, ensuring secure connections, topic-based message distribution, and robust error handling.</li>
+                    <li>Implemented AES algorithm for encryption and decryption of payload while communicating with server and terminal.</li>
+                    <li>Currently exploring ISO 8583 standards for NFC (Near Field Communication) Tap and Pay functionality on the device end. </li>
+                    <li>Proficiently learned and applied the Micronaut Framework, successfully building a SaaS application.</li>
+                    <li>Developed expertise in micro-services, implementing them through an email service for communication.</li>
+                    <li>Demonstrated proficiency in third-party API integration.</li>
+                    <li>Gained foundational understanding of the Fin-tech domain.</li>
+                    <li>Applied the principles of Clean Architecture to design modular and maintainable software systems.</li>
+                </ul>
+            </div>
+
+            <!-- Wordpress Developer -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Wordpress Developer</h3>
+                <p class="text-gray-600 font-medium">Smartlyyours Pvt Ltd | Thamel, Kathmandu, Nepal | 1st July 2022 – 29 July 2023</p>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>Created and updated re-usable code libraries to streamline WordPress development cycle.</li>
+                    <li>Leveraged strong understanding of WordPress core to manipulate admin and theme components.</li>
+                    <li>Converted design assets into component-based HTML, CSS and JavaScript.</li>
+                    <li>Teamed with design and project developers to understand project scope and offer elegant, creative and scalable solutions.</li>
+                    <li>Designed and implemented website from initial concept, site architecture and wire frames to finished deliverable.</li>
+                    <li>Assigned the custom fields to specific content types, such as trekking destinations, tours, or blog posts.</li>
+                    <li>Implemented security measures to protect the website from potential threats. Installed security plugins, enabled SSL, and regularly updated WordPress and plugins.</li>
+                </ul>
+            </div>
+
+            <!-- Python Django Internship -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Python Django Internship</h3>
+                <p class="text-gray-600 font-medium">Treeleaf.ai Pvt Ltd | Sankhamul, Lalitpur, Nepal | Feb 2022 – March 2022</p>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>Provided clerical support, addressing routine, and special requirements.</li>
+                    <li>Communicated effectively with faculty and staff and accepted critiques and suggestions for areas of improvement.</li>
+                    <li>Reported back to instructor to receive day-to-day tasks and responsibilities.</li>
+                    <li>Participated in on-the-job training, working closely with supervisors and coworkers and asking appropriate questions.</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-16 bg-gray-100">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold mb-6 text-center">Get in Touch</h2>
-                <form action="#" method="post" class="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
-                    <div class="mb-4">
-                        <label for="name" class="block text-gray-700 mb-2">Name</label>
-                        <input type="text" id="name" name="name" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="message" class="block text-gray-700 mb-2">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg" required></textarea>
-                    </div>
-                    <button type="submit" class="bg-gray-900 text-white px-6 py-2 rounded-lg hover:bg-gray-700 transition">Send Message</button>
-                </form>
+        <section id="education" class="mt-10 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Education</h2>
+
+            <!-- Tribhuvan University -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Tribhuvan University (National College of Computer Studies)</h3>
+                <p class="text-gray-600 font-medium">Kathmandu, Nepal | Bachelors in Information Management: 17/2022 (Completed Four Years Degree program)</p>
+                <p class="text-gray-600 font-medium">Major: Computer Science | Degree Honors - First Division (3.56 CGPA)</p>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>C Programming</li>
+                    <li>OOP Programming</li>
+                    <li>Java Programming</li>
+                    <li>Data Structure & Algorithm</li>
+                    <li>Statistics</li>
+                    <li>Software Engineering</li>
+                    <li>Artificial Intelligence</li>
+                    <li>Database Management System</li>
+                    <li>Computer Security & Cyber Law</li>
+                </ul>
+            </div>
+
+            <!-- Morgan International College -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Morgan International College</h3>
+                <p class="text-gray-600 font-medium">Kathmandu, Nepal | Intermediate Education (10+2): 14/2016 (Completed 2 years Diploma Program)</p>
+                <p class="text-gray-600 font-medium">Major: Management | Degree Honors – First Division (Aggregate – 63.30%)</p>
+            </div>
+
+            <!-- Mount Glory International Boarding High School -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Mount Glory International Boarding High School</h3>
+                <p class="text-gray-600 font-medium">Kathmandu, Nepal | High School Diploma (SLC): 2014 | Degree Honors – First Division (Aggregate – 77.88%)</p>
             </div>
         </section>
-    </div>
+
+        <section id="academic-projects" class="mt-10 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-4 text-gray-800">Relevant Academic Projects</h2>
+
+            <!-- Desktop Based Billing application -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Desktop Based Billing application - Research Project (Sixth Semester - 2021)</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>Developed Desktop Based Billing Application that effectively streamlined and automated various tasks associated with the management of billing system.</li>
+                    <li>Design a database schema to store information about customers, orders, inventory, pricing, invoice and employee data and generate bill.</li>
+                </ul>
+                <a href="https://github.com/DipendraBravo/Billing-desktop" target="_blank" class="text-blue-500 hover:text-blue-300">
+                    <i class="fab fa-github fa-lg"></i> GitHub Repo
+                </a>
+            </div>
+
+            <!-- Online Examination System -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Online Examination System - Hackathon Project (Seventh Semester - 2021)</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>Designed and implemented user-friendly interfaces for seamless navigation and an enhanced user experience.</li>
+                    <li>Integrated robust security features to ensure the integrity and confidentiality of examination data.</li>
+                    <li>Established a systematic database structure to efficiently store and manage examination records.</li>
+                </ul>
+                <a href="https://github.com/DipendraBravo/onlineexam" target="_blank" class="text-blue-500 hover:text-blue-300">
+                    <i class="fab fa-github fa-lg"></i> GitHub Repo
+                </a>
+            </div>
+
+            <!-- Stock Invent -->
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold mb-2">Stock Invent - Internship Project (Eighth Semester - 2022)</h3>
+                <ul class="list-disc list-inside mt-2 text-gray-600">
+                    <li>Defined the models for inventory system. This included models for products, categories, suppliers, and transactions.</li>
+                    <li>Created views and APIs to interact with the inventory system.</li>
+                    <li>Used Django's class-based views or function-based views to handle requests.</li>
+                    <li>Implemented CRUD (Create, Read, Update, Delete) operations for products, categories, suppliers, and transactions.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
 {% endblock %}
